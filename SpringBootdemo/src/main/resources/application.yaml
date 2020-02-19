@@ -1,0 +1,31 @@
+server:
+  port: 80
+  servlet:
+    context-path: /AppName
+spring:
+  #DB Configuration:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/mybatis?useUnicode=true&characterEncoding=utf-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: root
+  #JPA Configuration:
+  jpa:
+    database: MySQL
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+#spring集成Mybatis环境
+mybatis:
+  #pojo别名扫描包
+  type-aliases-package: com.example.demo.domain
+  #加载Mybatis映射文件
+  mapper-locations: "classpath:mapper/*Mapper.xml"
+
+
+
+
+
+
